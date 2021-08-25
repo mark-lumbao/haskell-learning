@@ -1,4 +1,4 @@
-# Revision history for haskelltest
+# Revision history for haskell-learning
 
 ## 0.1.0.0 -- YYYY-mm-dd
 
