@@ -27,3 +27,26 @@ chain n
 -- Lambdas
 numLongChains :: Int
 numLongChains = length (filter (\xs -> length xs > 15) (map chain [1..100]))
+
+-- Folding
+--
+-- A fold takes a binary function, a starting value (I like to call it the accumulator) and a list to fold up.
+-- The binary function itself takes two parameters. The binary function is called with the accumulator and the first (or last) element and produces a new accumulator.
+-- Then, the binary function is called again with the new accumulator and the now new first (or last) element, and so on.
+-- Once we've walked over the whole list, only the accumulator remains, which is what we've reduced the list to.
+sum' :: (Num a) => [a] -> a
+sum' xs = foldl (\acc x -> acc + x) 0 xs
+
+-- Better format
+sum'' :: (Num a) => [a] -> a
+sum'' = foldl (+) 0
+
+-- The right fold, foldr works in a similar way to the left fold, only the accumulator eats up the values from the right.
+-- Also, the left fold's binary function has the accumulator as the first parameter and the current value as the second one (so \acc x -> ...),
+-- the right fold's binary function has the current value as the first parameter and the accumulator as the second one (so \x acc -> ...).
+-- It kind of makes sense that the right fold has the accumulator on the right, because it folds from the right side.
+map' :: (a -> b) -> [a] -> [b]
+map' f xs = foldr (\x acc -> f x : acc) [] xs
+
+sum''' :: (Num a) => [a] -> a
+sum''' xs = foldr (\x acc -> acc + x) 0 xs
