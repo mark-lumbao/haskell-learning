@@ -5,7 +5,7 @@ I am but a humble programmer who's trying to dip my toes into the ocean of Funct
 ## Reasons?
 
 - Deeply understand the concept of immutability
-- Master configuration syntax for XMonad and XMobar
+- Properly understand configuration syntax for XMonad and XMobar
 - Ease my adaption of Elm for front-end web development
 - Brag about knowing Haskell and Functional Programming :3
 
